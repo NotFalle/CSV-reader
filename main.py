@@ -1,5 +1,6 @@
+import time
 import objects as obj
-import functions as func
+import functions as src
 import config.config as cfg
 import commands
 import inspect
@@ -15,53 +16,68 @@ my_dict = {
 
 ## TEMPORARY
 
-func.write_json(my_dict)
+src.write_to_json(my_dict)
 
-data = func.read_json()
+data = src.read_json()
 
-# get_user_input([message | optional], [string | optional], [yes_or_no | optional])
-def get_user_input(msg=None, string=True, yes_or_no=False):
+# get_user_input(message, [string | optional], [yes_or_no | optional])
+def get_user_input(msg, string=True, yes_or_no=False):
 
     if yes_or_no:
-        if msg == None:
-            user_input = input("Message [y/n]: ")
-        else:
-            user_input = input(msg)
+        while True:
+            user_input = input(f"{msg} [y/n]: ").strip().lower()
+
+            try:
+                user_input = str(user_input)
+                if user_input == "y":
+                    return True
+                elif user_input == "n":
+                    return False
+                else:
+                    print("Please only type one letter.")
+            
+            except ValueError as e:
+                print("Couldn't validate user_input.", e)
+                src.write_to_json(e, cfg.error_log, cfg.error_log_file_name)
+
     else:
         if string:
-            if msg == None:
-                user_input = input("Command: ")
-            else:
-                user_input = input(msg)
+            user_input = input(msg)
         else:
-            if msg == None:
-                user_input = input("Enter an number: ")
-            else:
-                user_input = input(msg)
+            user_input = input(msg)
     
     return user_input
 
 
 
 commands_list = [
-    command_name for command_name, command_object in inspect.getmembers(commands, inspect.isfunction)
+    command_name
+    for command_name, command_object in vars(commands).items()
+    if inspect.isfunction(command_object)
 ]
 
+try:
+    int("Bugging in the beninging :)")
 
+except ValueError as e:
+    print("Couldn't validate user_input.", e)
+
+    src.write_to_json(src.gen_error_message(e), cfg.error_log, cfg.error_log_file_name)
 
 while cfg.engine:
     print("Started!")
 
-    func.space()
+    src.space()
 
     print("Loaded commands:")
     for _ in commands_list:
         print(f"->  {_}")
 
-    func.space()
+    src.space()
 
-    print(get_user_input())
+    user_input = get_user_input("Command: ")
 
+    print(f"You chose: {user_input}")
 
     break
 

@@ -1,0 +1,7 @@
+{
+    "timestamp": "22:27:20 2026-11-12",
+    "error_type": "ValueError",
+    "error_message": "invalid literal for int() with base 10: 'Bugging in the beninging :)'",
+    "function": "main",
+    "category": "ValidationError"
+}
