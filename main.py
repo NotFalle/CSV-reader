@@ -3,7 +3,12 @@ import functions as func
 import config.config as cfg
 
 ## Delete me later
-my_dict = {"name": "Alice", "age": 30, "is_active": True}
+my_dict = {
+    "lastsearch": {
+        "csvfilename":"contacts.csv", 
+        "searchterm":"John"
+    }, 
+}
 
 
 func.write_json(my_dict)
@@ -14,7 +19,7 @@ while cfg.engine:
     print("hello")
     cfg.hello()
     print(data)
-    print("Name: ", data["name"])
+    print("Search term: ", data["lastsearch"]["searchterm"])
     break
 
 

@@ -1,5 +1,6 @@
 {
-    "name": "Alice",
-    "age": 30,
-    "is_active": true
+    "lastsearch": {
+        "csvfilename": "contacts.csv",
+        "searchterm": "John"
+    }
 }
