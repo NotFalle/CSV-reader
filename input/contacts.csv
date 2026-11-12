@@ -1,0 +1,11 @@
+id,first_name,last_name,email,phone,age,city
+1,Erik,Andersson,erik.andersson@example.com,0701234567,28,Stockholm
+2,Sofia,Karlsson,sofia.karlsson@example.com,0702345678,34,Göteborg
+3,Marcus,Lindberg,marcus.lindberg@example.com,0703456789,42,Malmö
+4,Emma,Berg,emma.berg@example.com,0704567890,25,Uppsala
+5,Oscar,Nilsson,oscar.nilsson@example.com,0705678901,31,Stockholm
+6,Lisa,Johansson,lisa.johansson@example.com,0706789012,29,Örebro
+7,Anton,Svensson,anton.svensson@example.com,0707890123,37,Linköping
+8,Julia,Eriksson,julia.eriksson@example.com,0708901234,22,Västerås
+9,David,Holm,david.holm@example.com,0709012345,45,Göteborg
+10,Maja,Bergström,maja.bergstrom@example.com,0700123456,27,Malmö

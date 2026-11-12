@@ -1,0 +1,13 @@
+transaction_id,contact_id,product,category,amount,currency,payment_method,status
+5001,1,Laptop,Electronics,12999,SEK,Card,Completed
+5002,2,Headphones,Electronics,899,SEK,Swish,Completed
+5003,3,Coffee,Food,45,SEK,Cash,Completed
+5004,4,Keyboard,Electronics,699,SEK,Card,Pending
+5005,5,Backpack,Accessories,599,SEK,Swish,Completed
+5006,6,Monitor,Electronics,2499,SEK,Card,Failed
+5007,7,Notebook,Office,89,SEK,Cash,Completed
+5008,8,Mouse,Electronics,299,SEK,Card,Completed
+5009,9,Desk,Furniture,3499,SEK,Swish,Pending
+5010,10,Chair,Furniture,1999,SEK,Card,Completed
+5011,1,USB Cable,Electronics,99,SEK,Swish,Completed
+5012,3,Water Bottle,Accessories,149,SEK,Card,Completed

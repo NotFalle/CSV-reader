@@ -1,0 +1,11 @@
+place_id,name,city,country,latitude,longitude,category
+101,Centralstationen,Stockholm,Sweden,59.3300,18.0580,Transport
+102,Liseberg,Göteborg,Sweden,57.6920,11.9900,Entertainment
+103,Turning Torso,Malmö,Sweden,55.6130,12.9760,Landmark
+104,Domkyrkan,Uppsala,Sweden,59.8586,17.6389,Landmark
+105,Stortorget,Örebro,Sweden,59.2753,15.2134,Square
+106,Trädgårdsföreningen,Göteborg,Sweden,57.7030,11.9730,Park
+107,Emporia,Malmö,Sweden,55.5650,12.9730,Shopping
+108,Skansen,Stockholm,Sweden,59.3240,18.1030,Museum
+109,Flygvapenmuseum,Linköping,Sweden,58.4020,15.5260,Museum
+110,Anundshög,Västerås,Sweden,59.6390,16.5990,Historical
