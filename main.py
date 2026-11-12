@@ -1,12 +1,20 @@
 import objects as obj
+import functions as func
 import config.config as cfg
 
-Engine = True
+## Delete me later
+my_dict = {"name": "Alice", "age": 30, "is_active": True}
 
 
-while Engine:
+func.write_json(my_dict)
+
+data = func.read_json()
+
+while cfg.engine:
     print("hello")
     cfg.hello()
+    print(data)
+    print("Name: ", data["name"])
     break
 
 
