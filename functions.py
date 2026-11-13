@@ -10,6 +10,7 @@ def space(i=1):
     for _ in range(i):
         print("")
 
+# timestamp()
 def timestamp():
     timestamp = datetime.datetime.now().strftime(
         "%H:%M:%S %Y-%m-%d" if cfg.swedish_timestamp
@@ -17,6 +18,8 @@ def timestamp():
     )
     return timestamp
 
+
+## Error handeling stuffy
 
 # crucial_error(msg, e)
 def crucial_error(msg, e):
@@ -27,6 +30,7 @@ def crucial_error(msg, e):
         print(f"[WARNING]: {msg} ", e)
         exit()
 
+# gen_error_message(e, filename)
 def gen_error_message(e, filename):
     try:
         error_message = {
@@ -39,8 +43,6 @@ def gen_error_message(e, filename):
         return error_message
     except ValueError as e:
         crucial_error("Couldn't create format error data!", e)
-
-
 
 
 ## json file stuffy
@@ -122,8 +124,13 @@ def safe_write_to_json(data, filepath):
         crucial_error(f"Couldn't write or append data to {filepath}!", e)
 
 
-## User related stuffy
+# Error handling writing to file
+def save_error(e, filename): # save_error(e, filename)
+    msg = gen_error_message(e, filename)
+    filepath = create_filepath(cfg.error_log_location, cfg.error_log_filename)
+    safe_write_to_json(msg, filepath)
 
+## User related stuffy
 
 # get_user_input(message, [string | optional], [yes_or_no | optional])
 def get_user_input(msg, string=True, yes_or_no=False):
@@ -143,8 +150,8 @@ def get_user_input(msg, string=True, yes_or_no=False):
             
             except ValueError as e:
                 print("Couldn't validate user_input.", e)
-                src.write_to_json(e, cfg.error_log, cfg.error_log_file_name)
-
+                save_error(e, os.path.basename(__file__))
+                
     else:
         if string:
             user_input = input(msg)

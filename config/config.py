@@ -14,8 +14,8 @@ filename = "data.jsonl" # Currently only supports .jsonl
 csv_location = "input/"
 
 # Error log file location and name
-error_log = "log/"
-error_log_file_name = "error_log.jsonl" # Currently only supports .jsonl
+error_log_location = "log/"
+error_log_filename = "error_log_location.jsonl" # Currently only supports .jsonl
 
 
 
