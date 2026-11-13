@@ -24,7 +24,7 @@ def main():
 
         src.space()
 
-        print("Loaded commands:")
+        print("Avalible commands:")
         for _ in commands_list:
             print(f"->  {_}")
 
@@ -34,7 +34,22 @@ def main():
 
         print(f"You chose: {user_input}")
 
-        break
+        src.space()
+
+        while True:
+
+            if user_input in commands_list:
+
+                selected_command = getattr(commands, user_input, None)
+
+                if callable(selected_command):
+                    selected_command()
+                else:
+                    print("Command not callable!")
+            else:
+                print("Couldn't find that command.")
+            break
+
 
 
 if __name__ == "__main__":
