@@ -19,9 +19,10 @@ def main():
 
     ## TEMPORARY
 
-    src.safe_write_to_json(my_dict, src.create_filepath())
+    print(src.create_filepath())
+    #src.safe_write_to_json(my_dict, )
 
-    data = src.read_json()
+    print(src.read_json("data.jsonl"))
 
     # get_user_input(message, [string | optional], [yes_or_no | optional])
     def get_user_input(msg, string=True, yes_or_no=False):
@@ -65,10 +66,9 @@ def main():
     except ValueError as e:
         print("Couldn't validate user_input.", e)
 
-        src.write_to_json(src.gen_error_message(e, __name__), cfg.error_log, cfg.error_log_file_name)
+        #src.write_to_json(src.gen_error_message(e, __name__), cfg.error_log, cfg.error_log_file_name)
 
     while cfg.engine:
-        print("Started!")
 
         src.space()
 
@@ -89,6 +89,6 @@ def main():
 
 
 if __name__ == "__main__":
-    print(f"Started {__name__}!")
+    print(f"Started main.py!")
     main()
     pass
