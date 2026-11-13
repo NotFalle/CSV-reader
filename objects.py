@@ -1,6 +1,6 @@
 class csv_file:
     """ A class representing an CSV file """
-    def __init__ (self, filename, limiter):
+    def __init__ (self, filename, limiter=""):
         self.filename = filename
         self.limiter = limiter
     
