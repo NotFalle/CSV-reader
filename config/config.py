@@ -22,7 +22,7 @@ error_log_file_name = "error_log.jsonl" # Currently only supports .jsonl
 ## Mabey don't touch?
 
 # If no filename is given
-default_filename = "unnamed.txt"
+default_filename = "unnamed.jsonl"
 default_location = "dump/" # Only when no location and no name is given
 
     
