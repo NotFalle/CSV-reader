@@ -6,18 +6,23 @@ swedish_timestamp = True # False: American timestamp
 engine = True
 
 # Name of the json file where temporary data will be stored
-filename = "data.json" # Currently only supports .json
+filename = "data.jsonl" # Currently only supports .jsonl
+
+
 
 # CSV file location
 csv_location = "input/"
 
 # Error log file location and name
 error_log = "log/"
-error_log_file_name = "error_log.json" # Currently only supports .json
+error_log_file_name = "error_log.jsonl" # Currently only supports .jsonl
 
 
 
+## Mabey don't touch?
 
-  
+# If no filename is given
+default_filename = "unnamed.txt"
+default_location = "dump/" # Only when no location and no name is given
 
     
