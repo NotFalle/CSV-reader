@@ -9,16 +9,13 @@ import os
 
 def main():
 
+    commands.search()
+
     commands_list = [
         command_name
         for command_name, command_object in vars(commands).items()
         if inspect.isfunction(command_object)
     ]
-
-    try:
-        int("Helluuu world")
-    except ValueError as e:
-        src.save_error(e, os.path.basename(__file__))
 
     while cfg.engine:
 

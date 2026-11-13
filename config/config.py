@@ -3,7 +3,7 @@
 swedish_timestamp = True # False: American timestamp
 
 # Weather to run the engine or not
-engine = True
+engine = False
 
 # Name of the json file where temporary data will be stored
 filename = "data.jsonl" # Currently only supports .jsonl
