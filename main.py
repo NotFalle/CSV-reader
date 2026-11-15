@@ -9,8 +9,6 @@ import os
 
 def main():
 
-    commands.search()
-
     commands_list = [
         command_name
         for command_name, command_object in vars(commands).items()
@@ -19,7 +17,8 @@ def main():
 
     while cfg.engine:
 
-        src.space()
+        src.print_header("CSV reader")
+        src.space(2)
 
         print("Avalible commands:")
         for _ in commands_list:

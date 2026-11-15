@@ -4,6 +4,22 @@ import json
 import config.config as cfg
 import modules.generator as gen
 
+## Fansy stuffy
+
+# print_header(text)
+def print_header(text):
+
+    if cfg.headers_all_caps:
+        header_text = text.upper().strip()
+    else:
+        header_text = text.lower().strip()
+    width = len(header_text) + 8
+    border = "#" * width
+
+    print(border)
+    print(f"##  {header_text}  ##")
+    print(border)
+
 
 # space([i | optional])
 def space(i=1):

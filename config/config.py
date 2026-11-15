@@ -2,8 +2,10 @@
 ## Settings
 swedish_timestamp = True # False: American timestamp
 
+headers_all_caps = True # False: no caps on text in header
+
 # Weather to run the engine or not
-engine = False
+engine = True
 
 # Name of the json file where temporary data will be stored
 filename = "data.jsonl" # Currently only supports .jsonl
