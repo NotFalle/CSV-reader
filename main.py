@@ -17,6 +17,7 @@ def main():
 
     while cfg.engine:
 
+        src.space(10)
         src.print_header("CSV reader")
         src.space(2)
 

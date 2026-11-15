@@ -25,8 +25,6 @@ def search():
             user_input = src.get_user_input("Continue?", True)
             if not user_input:
                 user_input = src.get_user_input("Try again?", True)
-                if not user_input:
-                    break
             else:
                 src.space()
                 continue_search = True
@@ -34,9 +32,8 @@ def search():
         else:
             print("Status: No such file by that name.")
             user_input = src.get_user_input("Try again?", True)
-            if not user_input:
-                break
 
+        # If continue_search is True
         if continue_search:
             src.space(2)
             print(f"Avalible columns in '{filepath}':")
