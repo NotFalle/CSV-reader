@@ -46,6 +46,7 @@ def main():
             else:
                 print("Couldn't find that command.")
             break
+        break
 
 
 

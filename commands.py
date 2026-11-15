@@ -5,9 +5,12 @@ import csv
 
 temp_csv_file = "input/contacts.csv"
 
+
 def search():
 
     while True:
+        continue_search = False
+        
         src.space(10)
         src.print_header("Finding csv file")
         src.space(2)
@@ -25,6 +28,8 @@ def search():
             user_input = src.get_user_input("Continue?", True)
             if not user_input:
                 user_input = src.get_user_input("Try again?", True)
+                if user_input == False:
+                    break
             else:
                 src.space()
                 continue_search = True
@@ -32,6 +37,8 @@ def search():
         else:
             print("Status: No such file by that name.")
             user_input = src.get_user_input("Try again?", True)
+            if user_input == False:
+                break
 
         # If continue_search is True
         if continue_search:
@@ -43,6 +50,7 @@ def search():
                 columns = next(reader) # Giving columns list all columns
                 for _ in columns:
                     print(f" - {_}")
+            break
 
 
 
