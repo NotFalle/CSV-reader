@@ -74,8 +74,8 @@ def create_filepath(location=None, filename=None): # Creates a filepath
 
     return filepath # Returns value
 
-# check_if_json_exists(filepath)
-def check_if_json_exists(filepath): # Check if file exists
+# check_if_file_exists(filepath)
+def check_if_file_exists(filepath): # Check if file exists
 
     return os.path.isfile(filepath) # Returns if file exist (True or False)
 
@@ -87,7 +87,7 @@ def write_to_json(data, filepath):
 
 # read_json(filepath)
 def read_json(filepath):
-    exists = check_if_json_exists(filepath)
+    exists = check_if_file_exists(filepath)
     if exists:
         try:
             with open(filepath, "r", encoding="utf-8") as file:
@@ -109,7 +109,7 @@ def append_to_json(data, filepath):
 # safe_write_to_json(data, filepath)
 def safe_write_to_json(data, filepath):
 
-    exists = check_if_json_exists(filepath)
+    exists = check_if_file_exists(filepath)
 
     try:
         if exists:
@@ -130,7 +130,7 @@ def save_error(e, filename): # save_error(e, filename)
 ## User related stuffy
 
 # get_user_input(message, [string | optional], [yes_or_no | optional])
-def get_user_input(msg, string=True, yes_or_no=False):
+def get_user_input(msg, yes_or_no=False, string=True):
 
     if yes_or_no:
         while True:
@@ -148,9 +148,9 @@ def get_user_input(msg, string=True, yes_or_no=False):
                 save_error(e, os.path.basename(__file__))
     else:
         if string:
-            user_input = input(msg)
+            user_input = input(f"{msg} ").strip().lower()
         else:
-            user_input = input(msg)
+            user_input = input(f"{msg} ").strip().lower()
     return user_input
 
 
