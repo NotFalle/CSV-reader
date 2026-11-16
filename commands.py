@@ -42,14 +42,26 @@ def search():
 
         # If continue_search is True
         if continue_search:
-            src.space(2)
-            print(f"Avalible columns in '{filepath}':")
-            with open(filepath, newline="") as csvfile:
-                columns = [] # Empty list
-                reader = csv.reader(csvfile) # Setting reader to csv file
-                columns = next(reader) # Giving columns list all columns
-                for _ in columns:
-                    print(f" - {_}")
+
+            selected_columns = []
+            user_input = src.get_user_input("Search in column(s)?", True)
+            if user_input:
+                while True:
+                    src.space(10)
+                    src.print_header("Selecting columns")
+                    src.space(2)
+                    print(f"Avalible columns in '{filepath}':")
+                    with open(filepath, newline="") as csvfile:
+                        columns = [] # Empty list
+                        reader = csv.reader(csvfile) # Setting reader to csv file
+                        columns = next(reader) # Giving columns list all columns
+                        for _ in columns:
+                            print(f" - {_}")
+                    print("Selected columns:")
+                    print(columns)
+
+                    print("Select column(s):")
+                    break
             break
 
 
