@@ -25,19 +25,19 @@ def search():
 
         if src.check_if_file_exists(filepath):
             print("Status: Found!")
-            user_input = src.get_user_input("Continue?", True)
-            if not user_input:
-                user_input = src.get_user_input("Try again?", True)
-                if user_input == False:
-                    break
-            else:
+            user_continue = src.get_user_input("Continue?", True)
+            if user_continue:
                 src.space()
                 continue_search = True
                 print("Continuing!!")
+            else:
+                user_try_again = src.get_user_input("Try again?", True)
+                if not user_try_again:
+                    break
         else:
             print("Status: No such file by that name.")
-            user_input = src.get_user_input("Try again?", True)
-            if user_input == False:
+            user_try_again = src.get_user_input("Try again?", True)
+            if not user_try_again:
                 break
 
         # If continue_search is True
