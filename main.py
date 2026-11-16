@@ -15,21 +15,29 @@ def main():
         if inspect.isfunction(command_object)
     ]
 
+    result = None
+
     while cfg.engine:
 
         src.space(10)
         src.print_header("CSV reader")
         src.space(2)
 
+        if result is not None:
+            print(f"From {user_input}:")
+            print(f"{result}")
+            src.space(2)
+
         print("Avalible commands:")
         for _ in commands_list:
             print(f"->  {_}")
 
-        src.space()
+
 
         user_input = src.get_user_input("Command: ")
 
         print(f"You chose: {user_input}")
+        result = None
 
         src.space()
 
@@ -40,7 +48,7 @@ def main():
                 selected_command = getattr(commands, user_input, None)
 
                 if callable(selected_command):
-                    selected_command()
+                    result = selected_command()
                 else:
                     print("Command not callable!")
             else:
